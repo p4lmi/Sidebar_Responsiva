@@ -1,0 +1,169 @@
+*{  /*seleciona todos os itens do index */
+
+    margin: 0; /*define a distância externa entre o elemento e outros elementos ao redor */
+    padding: 0; /*define a distância em relação aos elementos internos */
+    box-sizing: border-box; /*define a largura e altura de um elemento (a sidebar) */
+    font-family: "Noto Sans", sans-serif; /*define a fonte, importada no index */
+}
+
+body { /* "fundo" da página */
+    display: flex; /* posiciona a sidebar e o título lado a lado */
+    border: 20px;
+    min-height: 100vh;
+    background-color: #d0def5;
+}
+
+main{
+    padding: 10px; /* distância da palavra "título" em relação a side bar */
+}
+
+#sidebar{
+    display: flex;
+    flex-direction: column; /* organiza os elementos da sidebar em colunas (todos que estão dentro de nav id="sidebar") */
+    justify-content: space-between; /* alinha no eixo horizontal */
+    background-color: #ffffff;
+    height: 100vh;
+    border-radius: 0px 18px 18px 0px; /* arredonda os cantos superior e inferior direito */
+    position: relative;
+    transition: all .3s; /* animação entre abertura e fechamento da sidebar */
+    min-width: 82px;
+}
+
+#sidebar_content {
+    padding: 12px;
+}
+
+#user {
+    display: flex;
+    align-items: center; /* alinha no eixo vertical */
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+#user_avatar{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+
+#user_infos { /* id="user_infos"> <span class="item-description"> Matheus Fernandes */
+    display: flex;
+    flex-direction: column;
+}
+
+#user_infos span:last-child { /* last-child: seleciona o último item de user_infos */
+    color: #6b6b6b;
+    font-size: 12px;
+}
+
+#side-items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    list-style: none; /* remove marcadores padrão (bolinhas ou números) */
+    }
+
+.side-item {
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer; /* muda o cursor para uma "mão" indicando que o objeto é clicável */
+}
+
+.side-item.active { /* define a cor do ícone quando estiver selecionado */
+    background-color: #6fa3df;
+}
+
+.side-item:hover:not(.active), /* define a cor dos ícones quando o mouse estiver por cima mas não clicando */
+#logout_btn:hover{ /*Faz o mesmo com o botão do logout */
+    background-color: #e3e9f7;
+}
+
+.side-item a { /* configura as informações sobre os ícones dentro do <a href="#"> */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2825;
+}
+
+.side-item.active a{ /* define a cor dos ícones selecionados */
+    color: #e3e9f7;
+}
+
+.side-item.active a i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+#logout{
+    border-top: 1px solid #e3e9f7;
+    padding: 12px;
+}
+
+#logout_btn{
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-radius: 8px;
+    text-align: start;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#open_btn{
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    background-color: #6fa3df;
+    color: #e3e9f7;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#open_btn_icon{
+    transition: transform .3s ease;
+    line-height: 1px;
+    vertical-align: middle;
+}
+
+.open-sidebar #open_btn_icon{ /* rotaciona o ícone da seta ao abrir e fechar a barra lateral */
+    transform: rotate(180deg);
+}
+
+.item-description{
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    transition: width .6s;
+    height: 0px;
+}
+
+#sidebar.open-sidebar{ /* comando ativado pelo js */
+    min-width: 15%; /* define a abertura do menu lateral em relação ao tamanho da página */
+}
+
+#sidebar.open-sidebar .item-description{
+    width: 150px;
+    height: auto;
+}
+
+#sidebar.open-sidebar .side-item a{
+    justify-content: flex-start;
+    gap: 12px;
+}
