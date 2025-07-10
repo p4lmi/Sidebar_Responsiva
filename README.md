@@ -69,4 +69,4 @@ Acesse no navegador para visualizar a interface em tempo real.
 Este projeto não depende de bibliotecas externas além do Font Awesome e Google Fonts, ambos carregados via CDN. É totalmente funcional e pronto para ser usado em projetos pessoais, acadêmicos ou profissionais.
 
 👤 Autor
-Desenvolvido por Matheus Fernandes – Projeto acadêmico de front-end para portfólio.
+Desenvolvido por Matheus Fernandes – Projeto de front-end para portfólio (realizado através de tutoriais do youtube).
